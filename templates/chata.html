@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Analytics</title>
+    {%include 'common/mylinks.html'%}
+</head>
+
+<body>
+    <div class="container-fluid fixed-top " style="background-color:#292727 ">
+        {%include 'common/header.html'%}
+    </div>
+    <div class="container" style="margin-top: 300px">
+
+        <div class="row">
+            
+            <div class="col-sm-6">
+                <img src="{{url_for('static', filename='graph/frequency_pie.png')}}" style="border-radius: 7px;" alt="">
+            </div>
+            <div class="col-sm-6" > <h3 style="color: white;">Chat Analytics</h3>
+            <p style="content: justify-self unset; color: white;">Chat analytics for a chatbot involves the process of collecting, measuring, and analyzing user interactions to gain insights into user behavior, preferences, and overall chatbot performance. It helps identify how users engage with the bot, what questions are frequently asked, where users drop off, and how effectively the chatbot provides answers. By monitoring key metrics like user satisfaction, response time, retention rate, and intent recognition accuracy, developers can continuously improve the bot's conversational abilities. Chat analytics also supports data-driven decision-making, enabling enhancements in user experience, better personalization, and efficient troubleshooting of issues, making the chatbot more intelligent and responsive over time.</p></div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 200px;">
+        
+        {%include 'common/footer.html'%}
+    </div>
+</body>
+
+</html>

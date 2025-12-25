@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer</title>
+    {%include 'common/mylinks.html'%}
+</head>
+<body>
+    <div class="container-fluid fixed-top " style="background-color:#292727" >
+        {%include 'common/header.html'%}
+</div>
+
+<div class="container" style="margin-top:300px; ">
+  <div class="row " style=" min-height: 300px;">
+    
+    <div class="col-sm-3" style="  align-content: center;"><img src="{{url_for('static', filename='/Images/my_dp.jpg')}}" style="text-align: center;" height="300px"  alt=""></div>
+   
+    <div class="col-sm-8" style="  border: 1px solid gray; color: white;"><h1>About the Developer</h1>
+    <p style="font-size: 20px;" >Hello! I'm <span class="highlight">Anuj Kumar</span>, a passionate front-end & back-end developer. I love creating intuitive, dynamic, and visually appealing web applications.</p>
+    
+    <p style="font-size: 20px;">I specialize in technologies like <span class="highlight">HTML, CSS, JavaScript, Bootstrap, Python, Flask</span> and always strive to learn new tools to improve my skills.</p>
+    
+    <p style="font-size: 20px;">Currently, I'm working on <span class="highlight">AI & ML-based student help systems</span> and creating bots for educational institutions.</p>
+
+    <p style="font-size: 20px;">Feel free to connect with me:</p>
+    <div class="social-links" style="color: white;">
+      <a href=" #"  style="text-decoration: none; color: white; font-size: 18px;">GitHub</a>
+      <a href="https://www.linkedin.com/in/anuj-kumar-867418300/"  style="text-decoration: none; color: white; font-size: 18px;">LinkedIn</a>
+      <a href="#" style="text-decoration: none; color: white; font-size: 18px;">Portfolio</a>
+    </div>
+    <div class="col-sm-1" ></div>
+    
+    
+  </div>
+</div>
+
+
+    <div   class="container-fluid" style="margin-top:300px; " >
+        {%include 'common/footer.html'%}
+    </div>
+</body>
+</html>

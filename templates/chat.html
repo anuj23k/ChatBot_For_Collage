@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    {%include 'common/mylinks.html'%}
+</head>
+
+<body>
+    <div class="container-fluid fixed-top " style="background-color:#292727 ">
+        {%include 'common/header.html'%}
+    </div>
+
+    <div class="container-fluid" style="margin-top: 300px;">
+
+        <div class="row main" style="min-height: 600px; margin: 30px;">
+
+
+
+            <div class="col-sm-4 chatwin" style=" padding: 7px;">
+                <div class="row">
+
+
+
+                    <h3 class="text-center text-white">How may I help you?</h3>
+                  <div class="col-sm-12">
+
+                    <div id="dv_chatwindow"
+                        style=" height: 400px; width: 96%; margin-left: 5%; padding: 2%; border-radius: 7px; overflow-y: scroll; border: 2px solid; color: white; "
+                        onkeydown="sendOnEnter(event)">
+                    </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                    <input type="text" id="txtchat" placeholder="Type your query or concern.." class="form-control"
+                        style="height: 40px;  text-align: left; margin-left: 50px;  float: left; "
+                        onkeydown="sendOnEnter(event)">
+                </div>
+                <div class="col-sm-4">
+
+                    <input type="button" id="send" value="Send" style="height: 40px; ">
+                </div>
+                </div>
+                </div>
+
+ <div class="col-sm-1" ></div>
+            <div class="col-sm-7 " ><img src="{{url_for('static', filename='/Images/chat.jpg')}}" style="max-height: 500px; width: 100%; border-radius: 7%;" alt=""></div>
+
+</div>
+
+        </div>
+
+
+
+
+
+
+        <div class="container-fluid" style="min-width: 600px;">
+            {%include 'common/footer.html'%}
+        </div>
+</body>
+
+</html>
+
+<script>
+    //start chatbot
+
+    $(document).ready(function () {
+        //click of send button
+        $("#send").click(function () {
+            var cur_chat = $("#txtchat").val().trim()
+            if (cur_chat.length > 0) {
+                var chat_window_obj = $("#dv_chatwindow")
+                var new_update = chat_window_obj.html() + "<b>You:" + cur_chat + "<br>"
+                chat_window_obj.html(new_update)
+                $("#txtchat").val("")
+            }
+            // Start : Ajax search
+            my_obj = { userquery: cur_chat }
+            $.getJSON("getbotanswer", my_obj, function (bot_ans) {
+                mypara = "<p style='text-align:right'>" + bot_ans + "<b> :Bot</b></p>"
+                new_content = chat_window_obj.html() + mypara
+                chat_window_obj.html(new_content)
+                myDiv = document.getElementById("dv_chatwindow")
+                myDiv.scrollTop = myDiv.scrollHeight
+            })
+        });
+    });
+
+    function sendOnEnter(event) {
+        if (event.key === 'Enter')
+            $("#send").trigger("click")
+    }
+    //end chat bot
+</script>

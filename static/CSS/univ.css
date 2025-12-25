@@ -1,0 +1,116 @@
+body{
+    background-color:#5b5b5b ;
+    color: rgb(72, 70, 70);
+
+}
+
+#navbarNav ul li a{
+    
+    font-size: 18px;
+}
+
+a{
+    min-width: 120px;
+    text-align: center;
+}
+
+a:hover{background-color: rgb(72, 69, 69);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 5px;
+
+}
+
+#navbarNav ul li a:hover{
+    background-color: rgb(72, 69, 69);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 5px;
+    transition: scale(1.1);
+    font-size: 155%;
+
+}
+
+#our-research{
+    margin-top: 20px;
+}
+
+#our-research li{
+    padding: 10px;
+   
+}
+
+#our-research li a{
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+#our-research #heading{
+    color: rgb(161, 161, 161);
+}
+
+.box{padding: none;}
+
+#social div a{
+    margin-left: 20px;
+}
+
+input:hover{background-color: rgb(72, 69, 69);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 5px;
+    color: white;
+
+}
+
+.homed{
+    
+}
+
+.homed img{
+    height: 200px;
+    width: 300px;
+    border-radius: 7px;
+    
+}
+
+.homed img:hover{
+    transform: scale(1.1); 
+   
+}
+
+#collage-name{
+        color: rgb(255, 255, 255);
+         background-color:#555656;
+      border-radius: 7px;
+        align-content: center;
+         margin-top:30px ;
+        
+}
+
+#collage-name h3{
+    text-align: center;
+
+}
+
+#logo img:hover{
+    transform: scale(1.5);
+}
+
+#logo img{
+    padding-left: 30%;
+    text-align: center;
+}
+
+.accordion {
+    border-radius: 7%;
+}
+
+.slide div img {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+
+
+

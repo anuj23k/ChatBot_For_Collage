@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check</title>
+    {%include 'common/mylinks.html'%}
+</head>
+<body>
+    <div class="container-fluid" >
+        {%include 'common/header.html'%}
+
+
+
+        <h1>For AJAX testing</h1>
+
+      <div class="" >
+        <input type="number" id="txtnum1" placeholder="Enter First Number"><br>
+        <input type="number" id="txtnum2" placeholder="Enter Second Number"> <br><br>
+        <input type="button" value="Add" id="btnadd" >
+
+        <p id="para" style="color: white;">Additon</p>
+      </div>
+
+
+
+   
+        {%include 'common/footer.html'%}
+    </div>
+</body>
+</html>
+
+
+<script>
+$(document).ready(function(){
+    $("#btnadd").click(function(){
+
+        var num1, num2;
+        num1= parseInt($("#txtnum1").val())
+        num2= parseInt($("#txtnum2").val())
+        var obj={fnum: num1, snum:num2 }
+
+        // AJAX call
+
+        $.getJSON("/addnum", obj, function(res){
+            $("#para").text(res)
+        })
+
+
+
+    })
+})
+
+</script>
